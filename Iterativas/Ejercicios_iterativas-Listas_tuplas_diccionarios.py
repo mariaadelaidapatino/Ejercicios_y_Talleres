@@ -19,7 +19,7 @@ def triangulo (numero):
    
 print(triangulo(numero))
 
-# Ejercicio 3 #Falta
+# Ejercicio 3 
 
 numero = (int(input("Ingrese un numero: ")))
 
@@ -44,17 +44,36 @@ while eco != "salir":
 
 print(guardar)
 
-# Ejercicio 5 #falta
+# Ejercicio 5 
 
 entrada=input("ingresa pares de palabras (palabra:traduccion) separados por ,")
-diccionario = dict(palabras.split(":") for palabras in entrada.split(","))
+diccionario = {}
+for i in entrada.split(","):
+    palabra, traduccion = i.split(":")
+    diccionario[palabra] = traduccion
 frase = input("Ingrese una frase en español")
+#falta traducir la frase ingresada 
 
-
-print(entrada)
-print(type(entrada))
+diccionario2 = dict(palabras.split(":") for palabras in entrada.split(",")) #otra opcion encontrada para hacer el diccionario 
 
 # Ejercicio 6
+
+lista= input("ingresa el articulo y el precio con un = entre ellos, separe cada par con ,")
+cesta_de_compra = {}
+coste_total = 0
+print(f"   Lista de Compra \n____________________________")
+for i in lista.split(","):
+    articulo, precio = i.split("=")
+    cesta_de_compra[articulo] = precio
+for j in cesta_de_compra.values():
+    j = float(j)
+    coste_total += j
+    
+for k, v in cesta_de_compra.items():
+    key= k.capitalize()
+    print(key, "      ","$", v,"\n","____________________________")
+
+print("Total","      ","$",coste_total)
 
 # Ejericio 7
 
