@@ -30,7 +30,17 @@ caracter_fruta= list(len(fruta) for fruta in frutas)
 print(caracter_fruta)
 
 #Ejercicio 7
-
+frutas = ['mango', 'kiwi', 'fresa', 'guayaba', 'piña', 'mandarina', 'uva', 'banano']
+contador = 0
+for palabra in frutas:
+    print(palabra, end=",")
+    for vocales in palabra:
+        if vocales in "aeiou":
+            
+            vocales = len(vocales)
+            numero_vocales= []
+            numero_vocales.append(vocales)
+            print(numero_vocales)
 
 #Ejercicio 8
 primos = list( x for x in range(2,101) if not(x% 2 == 0 or x% 3 == 0 or x% 5 == 0 or x% 7 == 0))
@@ -53,3 +63,11 @@ reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers)
 print(reduce_result)
 
 #Ejercicio 10
+
+lista_de_numeros = [10, 20, 30, 400, 50, 100] # [10, 30, 50, 90, 100, 101] #[1, 2, 3, 4, 5, 6, 7, 8, 9] #[151, 60, -5, 135, 18, 40]
+#Si todos los enteros son positivos, se debe revisar si algún entero es un número palíndromo
+positivos = (all(list(map(lambda x: x> 0, lista_de_numeros))))
+print(positivos)
+
+palindromo = (any(list(map(lambda y: str(y) == str(y[::-1]), str(lista_de_numeros)))))
+print(palindromo)
