@@ -25,7 +25,14 @@ mayor_numero = max(mayor_numero)
 print("El mayor numero ingresado es", mayor_numero)
 
 #Ejericio 5
+#Ingresa unas frases en minusculas y las imprime en mayusculas
+cadena = input("Ingresa la frase")
+while cadena != "":
+    mensaje = cadena.upper() 
+    print(mensaje)
+    cadena = input("Ingresa la frase")
 
 #Ejercicio 6
+
 
             
