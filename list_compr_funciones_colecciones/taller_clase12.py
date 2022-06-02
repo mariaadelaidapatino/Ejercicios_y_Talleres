@@ -1,19 +1,32 @@
 #Ejercicio 1
+
 frase = "el rápido zorro marrón salta sobre el perro perezoso"
-longitud_palabra= list(len(palabras) for palabras in frase.split(" ") if palabras != "el")
-print(longitud_palabra)
+def longitud(frase):
+    #longitud de cada palabra de la frase
+    longitud_palabra= list(len(palabras) for palabras in frase.split(" ") if palabras != "el")
+    return longitud_palabra
+print(longitud(frase))
 
 #Ejercicio 2
+ 
 numeros = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
-nueva_lista = list(positivos for positivos in numeros if positivos > 0)
-print(nueva_lista)
+def lista_numeros(numeros):
+    #Lista de solo numeros positivos
+    nueva_lista = list(positivos for positivos in numeros if positivos > 0)
+    return nueva_lista
+print(lista_numeros(numeros))
 
 #Ejercicio 3
+
 Frase ="Hello 12345 World 5602"
-conjunto_digitos = set(digitos for digitos in Frase if digitos.isdigit())
-print(conjunto_digitos)
+def digitos (Frase):
+    #Conjunto con los digitos de una frase
+    conjunto_digitos = set(digitos for digitos in Frase if digitos.isdigit())
+    return conjunto_digitos
+print(digitos(Frase))
 
 #Ejercicio 4
+
 valor_1=[x**2 for x in range(10)]
 print(valor_1) 
 valor_2 =[2**i for i in range(13)]
@@ -25,11 +38,16 @@ cubo= list(x**3 for x in range(10))
 print(cubo)
 
 #Ejercicio 6
+
 frutas = ['mango', 'kiwi', 'fresa', 'guayaba', 'piña', 'mandarina', 'uva', 'banano']
-caracter_fruta= list(len(fruta) for fruta in frutas)
-print(caracter_fruta)
+def num_caracteres(frutas):
+    #lista con la cantidad de caracteres que tiene cada fruta 
+    caracter_fruta= list(len(fruta) for fruta in frutas)
+    return caracter_fruta
+print(num_caracteres(frutas))
 
 #Ejercicio 7
+#lista con las frutas qeu contengan solo dos vocales
 frutas = ['mango', 'kiwi', 'fresa', 'guayaba', 'piña', 'mandarina', 'uva', 'banano']
 contador = 0
 for palabra in frutas:
@@ -43,24 +61,37 @@ for palabra in frutas:
             print(numero_vocales)
 
 #Ejercicio 8
+#lista de numeros primos del 2 al 100
 primos = list( x for x in range(2,101) if not(x% 2 == 0 or x% 3 == 0 or x% 5 == 0 or x% 7 == 0))
 primos.extend([2,3,5,7])
 primos.sort()
 print(primos)
 
 #Ejercicio 9
-from functools import reduce 
+
 my_floats = [4.35, 6.09, 3.25, 9.77, 2.16, 8.88, 4.59]
-map_result = list(map(lambda x: round((x**2),3), my_floats))
-print(map_result)
+def cuadrado(my_floats):
+    # cuadrado de cada numero redondeado
+    map_result = list(map(lambda x: round((x**2),3), my_floats))
+    return map_result
+print(cuadrado(my_floats))
+
 
 my_names = ["olumide", "akinremi", "josiah", "temidayo", "omoseun"]
-filter_result = list(filter(lambda name: name if len(name) <= 7 else "", my_names)) 
-print(filter_result)
+def menor_a_7_letras(my_names):
+    #lista con los nombres que tengan 7 o menos letras
+    filter_result = list(filter(lambda name: name if len(name) <= 7 else "", my_names)) 
+    return filter_result
+print(menor_a_7_letras)
+
 
 my_numbers = [4, 6, 9, 23, 5]
-reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers)
-print(reduce_result)
+def producto (my_numbers):
+    #producto de los numeros de la lista
+    from functools import reduce
+    reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers)
+    return reduce_result
+print(producto(my_numbers))
 
 #Ejercicio 10
 
