@@ -12,7 +12,7 @@ print(longitud(frase))
 numeros = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 def lista_numeros(numeros):
     #Lista de solo numeros positivos
-    nueva_lista = list(positivos for positivos in numeros if positivos > 0)
+    nueva_lista = list(int(positivos) for positivos in numeros if positivos > 0)
     return nueva_lista
 print(lista_numeros(numeros))
 
@@ -47,18 +47,23 @@ def num_caracteres(frutas):
 print(num_caracteres(frutas))
 
 #Ejercicio 7
-#lista con las frutas qeu contengan solo dos vocales
+#lista con las frutas que contengan solo dos vocales
 frutas = ['mango', 'kiwi', 'fresa', 'guayaba', 'piña', 'mandarina', 'uva', 'banano']
-contador = 0
-for palabra in frutas:
-    print(palabra, end=",")
-    for vocales in palabra:
-        if vocales in "aeiou":
+def N_vocales(frutas):  
+    contador = 0
+    for palabra in frutas:
+        
+        print(palabra, end=",")
+        for vocales in palabra:
             
-            vocales = len(vocales)
-            numero_vocales= []
-            numero_vocales.append(vocales)
-            print(numero_vocales)
+            if vocales in "aeiou":
+                contador+= 1
+                continue
+        print(contador)
+        continue
+        
+    return contador
+print(N_vocales(frutas))
 
 #Ejercicio 8
 #lista de numeros primos del 2 al 100
