@@ -68,7 +68,17 @@ dato = float(input("numero"))
 print(numero_r(dato))
 
 # Ejercicio 6
-
+def numero_r(dato: float):
+    #Indica si el numero ingresado esta dentro de los rangos (3.5 , 7.8],[9.3, 4.5] y [23.4, 45.3]
+    if not isinstance (dato, float) and not isinstance(dato, int):
+         return "Numero no valido"
+    if [(dato > 3.5 and dato <= 7.8) or (dato >= 9.3 and dato <= 4.5) or (dato >= 23.4 and dato >= 45.3)]:
+        dato ="Esta dentro del rango (3.5 , 7.8],[9.3, 4.5] y [23.4, 45.3]"
+    else:
+        dato= "No esta dentro de ningun rango"
+    return dato
+dato = float(input("numero"))
+print(numero_r(dato))
 
 
 #Ejercicio 7
