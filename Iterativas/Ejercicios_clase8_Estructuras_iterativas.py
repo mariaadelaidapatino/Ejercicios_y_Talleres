@@ -33,6 +33,25 @@ while cadena != "":
     cadena = input("Ingresa la frase")
 
 #Ejercicio 6
+# Retorna el saldo de una cuenta bancaria segun la siguiente bitácora D 200, D 200, R 100, D 50. 
+# Donde D es deposito y R es retiro
 
+saldo = 0
+entrada = input("entrada")
+valor = 0
+
+while entrada != "":
+    if entrada[0] == "D":
+        valor = entrada[2:]
+        saldo += int(valor)
+    elif entrada[0] == "R":
+        valor = entrada[2:]
+        saldo -= int(valor)
+    else:
+        pass
+
+    entrada = input("entrada")
+
+print(saldo)
 
             
